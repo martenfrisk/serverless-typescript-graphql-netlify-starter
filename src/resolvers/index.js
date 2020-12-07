@@ -7,10 +7,12 @@ import stadiumResolver from './stadium/retrieve';
 import tableResolver from './table/search';
 import teamResolver from './team/retrieve';
 import teamSearchResolver from './team/search';
+import eventsNextResolver from './eventsnext/retrieve';
 
 const resolvers = {
     Query: {
-        teamSearch: teamSearchResolver,
+				teamSearch: teamSearchResolver,
+				eventsNext: eventsNextResolver,
         team: teamResolver,
         league: leagueResolver,
         player: playerResolver,
@@ -22,7 +24,7 @@ const resolvers = {
         social: team => socialResolver(team),
         stadium: team => stadiumResolver(team),
         league: (team, args, ctx) => leagueResolver(team, { id: team.idLeague }, ctx),
-    },
+		},
     League: {
         social: league => socialResolver(league),
     },

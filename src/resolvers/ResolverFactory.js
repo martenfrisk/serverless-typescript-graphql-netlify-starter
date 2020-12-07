@@ -9,7 +9,7 @@ export const API_ENDPOINTS = {
     EVENT: 'lookupevent',
     LEAGUE: 'lookupleague',
     TEAM: 'lookupteam',
-    PLAYER: 'lookupplayer',
+		PLAYER: 'lookupplayer',
 }
 
 export const DATA_PROPS = {
@@ -17,7 +17,7 @@ export const DATA_PROPS = {
     LEAGUE: 'leagues',
     TEAM: 'teams',
     PLAYER: 'players',
-    TABLE: 'table',
+		TABLE: 'table',
 }
 
 /**

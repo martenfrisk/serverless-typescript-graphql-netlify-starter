@@ -2,6 +2,7 @@ const Queries = `
     # This type specifies the entry points into our API.
     type Query {
         teamSearch(name: String, leagueId: ID): [Team]
+        eventsNext(teamId: ID, leagueId: ID): [Event]
         team(id: ID!): [Team]
         league(id: ID!): [League]
         player(id: ID!): [Player]

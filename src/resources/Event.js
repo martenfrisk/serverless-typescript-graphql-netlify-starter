@@ -10,7 +10,8 @@ const Event = `
         round: Int                          # intRound
         spectators: Int                     # intSpectators
         eventDate: String                   # dateEvent
-        eventTime: String                   # strTime
+				eventTime: String                   # strTime
+				dateTime: String										# strTimestamp
         result: String                      # strResult
         circuit: String                     # strCircuit
         venue: String                     	# strVenue

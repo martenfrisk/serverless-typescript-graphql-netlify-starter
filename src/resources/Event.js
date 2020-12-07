@@ -13,6 +13,7 @@ const Event = `
         eventTime: String                   # strTime
         result: String                      # strResult
         circuit: String                     # strCircuit
+        venue: String                     	# strVenue
         country: String                     # strCountry
         city: String                        # strCity
         poster: String                      # strPoster

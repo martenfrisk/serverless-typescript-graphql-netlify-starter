@@ -1,32 +1,38 @@
 
-import { ApolloServer, gql } from 'apollo-server'
+import { ApolloServer } from 'apollo-server'
 import { ApolloServer as ApolloServerLambda } from 'apollo-server-lambda'
+import depthLimit from 'graphql-depth-limit'
+import resolvers from './resolvers'
+import typeDefs from './resources'
+import errorFormatter from './errors/ErrorFormatter'
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => "Hi! Love from @stemmlerjs 🤠."
-  }
-};
+const validationRules = [
+	depthLimit(3),
+];
 
 function createLambdaServer () {
-  return new ApolloServerLambda({
+	return new ApolloServerLambda({
     typeDefs,
     resolvers,
+    context: {
+        baseUrl: `https://www.thesportsdb.com/api/v1/json/1/`,
+    },
+    formatError: errorFormatter,
+    validationRules,
     introspection: true,
     playground: true,
   });
 }
 
 function createLocalServer () {
-  return new ApolloServer({
+	return new ApolloServer({
     typeDefs,
     resolvers,
+    context: {
+        baseUrl: `https://www.thesportsdb.com/api/v1/json/1/`,
+    },
+    formatError: errorFormatter,
+    validationRules,
     introspection: true,
     playground: true,
   });

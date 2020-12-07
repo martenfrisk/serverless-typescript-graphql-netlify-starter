@@ -35,6 +35,9 @@
   },
   "dependencies": {
     "apollo-server": "^2.10.1",
-    "apollo-server-lambda": "^2.10.1"
+    "apollo-server-lambda": "^2.10.1",
+    "axios": "^0.21.0",
+    "esm": "^3.2.25",
+    "graphql-depth-limit": "^1.1.0"
   }
 }
